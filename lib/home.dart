@@ -3,6 +3,9 @@ import 'package:div/div.dart';
 import 'package:resep/indo.dart';
 import 'package:resep/jepang.dart';
 import 'package:resep/login_page.dart';
+import 'package:resep/profil.dart';
+import 'package:resep/register.dart';
+import 'package:resep/favorit.dart';
 
 
 void main() {
@@ -101,7 +104,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                     ),
 
                     Padding(
-                    padding:const EdgeInsets.only(top: 50.0, bottom: 50.0, left: 5.0),
+                    padding:const EdgeInsets.only(top: 50.0, bottom: 50.0,),
                     child: IconButton(
                       icon: Image.asset('assets/china.png'),
                       iconSize: 180,
@@ -118,24 +121,66 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
           ],
           )  
         ),
-        bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorite',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: _selectedNavbar,
-        selectedItemColor: Color.fromARGB(255, 255, 118, 156),
-        onTap: _changeSelectedNavBar,
+        bottomNavigationBar: Container(
+        height: 65.0,
+        color: Color.fromARGB(255, 255, 118, 156),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+                margin: const EdgeInsets.only(right:15.0, left: 15.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 255, 118, 156), 
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                ),
+                child:
+                  IconButton(icon: new Icon(Icons.home, 
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  size: 25.0,),
+                  onPressed: () {
+                    Navigator.push(context, 
+                    MaterialPageRoute(builder: ((context)=>Home())));
+                  },),
+            ),
+
+            Container(
+                margin: const EdgeInsets.only(right:15.0, left: 15.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 255, 118, 156), 
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                ),
+                child: 
+                  IconButton(icon: new Icon(Icons.favorite, 
+                  color: Color.fromARGB(255, 251, 201, 232),
+                  size: 25.0,),
+                  onPressed: () {
+                    Navigator.push(context, 
+                    MaterialPageRoute(builder: ((context)=>FavoriteRecipesPage())));
+                  },),
+            ),
+
+            Container(
+                margin: const EdgeInsets.only(right:15.0, left: 15.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 255, 118, 156), 
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                ),
+                child: 
+                  IconButton(icon: new Icon(Icons.person, 
+                  color: Color.fromARGB(255, 251, 201, 232),
+                  size: 25.0,),
+                  onPressed: () {
+                    Navigator.push(context, 
+                    MaterialPageRoute(builder: ((context)=>AccountPage())));
+                  },),
+            ),
+
+          ],
+        ),
       ),
     );
   }

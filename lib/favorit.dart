@@ -1,88 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:resep/logout.dart';
 import 'package:resep/home.dart';
-import 'package:resep/favorit.dart';
 import 'package:resep/profil.dart';
 
-class AccountPage extends StatelessWidget {
+class FavoriteRecipesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(236, 236, 200, 200),
-      body: Column(
-        children: [
-          Container(
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(
-                    'https://images.unsplash.com/photo-1543269665-cbf427effbad'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+      appBar: AppBar(
+        title: Text('Resep Favorit'),
+      ),
+      body: ListView.builder(
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return Card(
+            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            elevation: 3,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  radius: 50,
-                  backgroundImage: NetworkImage(
-                      'https://images.unsplash.com/photo-1543269665-cbf427effbad'),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'John Doe',
-                  style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color:  Color.fromARGB(255, 255, 118, 156))
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 30),
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  Row(
+                Container(
+                  child: Image(
+                    image: AssetImage(
+                      'assets/klepon.png'), 
+                      width: 120,
+                      height: 120,
+                )
+              ),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.favorite, size: 30, color: Color.fromARGB(255, 255, 118, 156),),
-                      SizedBox(width: 10),
                       Text(
-                        'Favorit',
-                        style: TextStyle(fontSize: 20, color:  Color.fromARGB(255, 255, 118, 156)),
+                        'Resep Klepon',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        'oleh John Doe',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Resep ini sangat mudah dan enak, cocok untuk acara keluarga',
+                        style: TextStyle(fontSize: 16),
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
-                  ElevatedButton(
-                  child: Text(
-                    "Logout",
-                    style: TextStyle(color: Colors.white, fontSize: 20.0),
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 255, 118, 156),
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 150.0, vertical: 25.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                  onPressed: () {
-                  
-                      Navigator.push(context, 
-                      MaterialPageRoute(builder: ((context)=>Logout())));
-                    
-                  },
                 ),
-                ],
-              ),
+              ],
             ),
-          ),
-        ],
+          );
+        },
       ),
-        bottomNavigationBar: Container(
+    bottomNavigationBar: Container(
         height: 65.0,
         color: Color.fromARGB(255, 255, 118, 156),
         child: Row(
@@ -138,7 +111,11 @@ class AccountPage extends StatelessWidget {
                     Navigator.push(context, 
                     MaterialPageRoute(builder: ((context)=>AccountPage())));
                   },),
-            ),])
-    ));
+            ),
+
+          ],
+        ),
+      ),
+    );
   }
 }

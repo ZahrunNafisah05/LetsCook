@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:resep/home.dart';
+import 'package:resep/rspdawet.dart';
+import 'package:resep/rspklepon.dart';
 import 'package:resep/rsprendang.dart';
+import 'package:resep/rspdawet.dart';
 
 class ResepIndo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resep Makanan'),
+        title: Text('Resep Menu Indonesia'),
         backgroundColor: Color(0xFFFE939E),
 
       ),
@@ -24,32 +27,22 @@ class ResepIndo extends StatelessWidget {
             }, key: Key('nasi'),
           ),
           RecipeCard(
-            title: 'Mie Goreng',
-            imageUrl: 'https://i.imgur.com/9gZoJ44.jpg',
+            title: 'Dawet',
+            imageUrl: 'assets/dawet.png',
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => RecipeDetailPage()),
+                MaterialPageRoute(builder: (context) => ResepDawet()),
               );
             }, key: Key('mie'),
           ),
           RecipeCard(
-            title: 'Sate Ayam',
-            imageUrl: 'https://i.imgur.com/BzcvX9k.jpg',
+            title: 'Klepon',
+            imageUrl: 'assets/klepon.png',
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => RecipeDetailPage()),
-              );
-            }, key: Key('ayam'),
-          ),
-          RecipeCard(
-            title: 'Soto Ayam',
-            imageUrl: 'https://i.imgur.com/cYpnyPd.jpg',
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => RecipeDetailPage()),
+                MaterialPageRoute(builder: (context) => KleponRecipePage()),
               );
             }, key: Key('ayam'),
           ),
@@ -100,34 +93,6 @@ class RecipeCard extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class ResepRendang extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Detail Resep'),
-      ),
-      body: Center(
-        child: Text('Ini adalah halaman detail resep'),
-      ),
-    );
-  }
-}
-
-class RecipeDetailPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Detail Resep'),
-      ),
-      body: Center(
-        child: Text('Ini adalah halaman detail resep'),
       ),
     );
   }

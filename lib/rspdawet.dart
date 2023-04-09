@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:resep/add.dart';
 
-class ResepRendang extends StatefulWidget {
-  const ResepRendang({Key? key}) : super(key: key);
+class ResepDawet extends StatefulWidget {
+  const ResepDawet ({Key? key}) : super(key: key);
 
   @override
-  _ResepRendang createState() => _ResepRendang();
+  _ResepDawet createState() => _ResepDawet();
 }
 
-class _ResepRendang extends State<ResepRendang> {
+class _ResepDawet extends State<ResepDawet> {
   bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: Color.fromARGB(236, 236, 200, 200),
       appBar: AppBar(
-        title: const Text('Resep Rendang'),
+        title: const Text('Resep Dawet'),
         backgroundColor: Color(0xFFFE939E),
       ),
       body: SingleChildScrollView(
@@ -30,7 +28,7 @@ class _ResepRendang extends State<ResepRendang> {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                      'assets/rendang.png'),
+                      'assets/dawet.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -46,19 +44,18 @@ class _ResepRendang extends State<ResepRendang> {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8),
-                  Text('- 1 kg daging sapi\n- 10 buah cabai merah\n- 5 buah cabai rawit\n- 10 siung bawang merah\n- 5 siung bawang putih\n- 2 ruas lengkuas\n- 3 lembar daun jeruk\n- 2 batang serai\n- 1 bungkus santan kental\n- 1 sdm gula merah\n- 2 sdt garam\n- minyak goreng secukupnya'),
-                  const SizedBox(height: 16),
+                  Text('- 200 gram tepung ketan\n- 50 gram tepung beras\n- 700 ml air\n- 250 ml santan kental\n- 200 gram gula merah, disisir\n- 1/2 sdt garam\n- 1 lembar daun pandan\n- es serut secukupnya'),                  const SizedBox(height: 16),
                   const Text(
                     'Langkah-langkah',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8),
-                  Text('1. Potong daging sapi sesuai selera.'),
-                  Text('2. Haluskan cabai merah, cabai rawit, bawang merah, bawang putih, dan lengkuas.'),
-                  Text('3. Tumis bumbu halus, daun jeruk, dan serai hingga harum.'),
-                  Text('4. Masukkan daging sapi, aduk hingga rata.'),
-                  Text('5. Tambahkan santan, gula merah, dan garam.'),
-                  Text('6. Masak dengan api kecil hingga daging empuk dan bumbu meresap.'),
+                  Text('1. Campurkan tepung ketan, tepung beras, dan air.'),
+                  Text('2. Aduk rata hingga tidak ada yang menggumpal.'),
+                  Text('3. Tuang adonan ke dalam panci.'),
+                  Text('4. Masukkan santan, gula merah, garam, dan daun pandan.'),
+                  Text('5. Masak dengan api sedang sambil terus diaduk hingga mengental dan matang.'),
+                  Text('6. Sajikan dawet dengan es serut, santan dan cairan gula merah'),
                 ],
               ),
             ),
@@ -71,19 +68,9 @@ class _ResepRendang extends State<ResepRendang> {
             isFavorite = !isFavorite;
           });
         },
-        child: Column( 
-          children: [
-            Icon(isFavorite ? Icons.favorite : Icons.favorite_border,
-          color: Color(0xFFFE939E),),
-           IconButton(icon: new Icon(Icons.plus_one_rounded, 
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  size: 25.0,),
-                  onPressed: () {
-                    Navigator.push(context, 
-                    MaterialPageRoute(builder: ((context)=>OrderPage())));
-                  },),
-
-          ]
+        child: Icon(
+          isFavorite ? Icons.favorite : Icons.favorite_border,
+          color: Color(0xFFFE939E),
         ),
       ),
     );
