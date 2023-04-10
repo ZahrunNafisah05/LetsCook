@@ -6,6 +6,8 @@ import 'package:resep/login_page.dart';
 import 'package:resep/profil.dart';
 import 'package:resep/register.dart';
 import 'package:resep/favorit.dart';
+import 'package:resep/thailand.dart';
+import 'package:resep/china.dart';
 
 
 void main() {
@@ -98,7 +100,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                       iconSize: 180,
                       onPressed: (() {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                        RecipeListPage()));
+                        ResepThailand()));
                       }),
                     )
                     ),
@@ -110,7 +112,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
                       iconSize: 180,
                       onPressed: (() {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                        RecipeListPage()));
+                        ResepChina()));
                       }),
                     )
                     ),

@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:resep/home.dart';
-import 'package:resep/rspshushi.dart';
+import 'package:resep/rsppadthai.dart';
 
 
-class RecipeListPage extends StatelessWidget {
+class ResepThailand extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resep Menu Jepang'),
+        title: Text('Resep Menu Thailand'),
         backgroundColor: Color(0xFFFE939E),
 
       ),
       body: ListView(
         children: [
           RecipeCard(
-            title: 'Sushi',
-            imageUrl: 'assets/Shushi.png',
+            title: 'Pad Thai',
+            imageUrl: 'assets/PadThai.png',
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ResepShushi()),
+                MaterialPageRoute(builder: (context) => ResepPadThai()),
               );
             }, key: Key('Sushi'),
           ),
           RecipeCard(
-            title: 'Genmaicha',
-            imageUrl: 'assets/Ganmaicha.png',
+            title: 'Tom Yum Goom',
+            imageUrl: 'assets/TomYum.png',
             onTap: () {
               Navigator.push(
                 context,
@@ -35,8 +35,8 @@ class RecipeListPage extends StatelessWidget {
             }, key: Key('Genmaicha'),
           ),
           RecipeCard(
-            title: 'Daifuku',
-            imageUrl: 'assets/Daifuku.png',
+            title: 'Som Tum',
+            imageUrl: 'assets/somtum.png',
             onTap: () {
               Navigator.push(
                 context,

@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:resep/home.dart';
-import 'package:resep/rspshushi.dart';
+import 'package:resep/rspbakpao.dart';
 
 
-class RecipeListPage extends StatelessWidget {
+class ResepChina extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Resep Menu Jepang'),
+        title: Text('Resep Menu China'),
         backgroundColor: Color(0xFFFE939E),
 
       ),
       body: ListView(
         children: [
           RecipeCard(
-            title: 'Sushi',
-            imageUrl: 'assets/Shushi.png',
+            title: 'Bakpao',
+            imageUrl: 'assets/Bakpao.png',
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ResepShushi()),
+                MaterialPageRoute(builder: (context) => ResepBakpao()),
               );
             }, key: Key('Sushi'),
           ),

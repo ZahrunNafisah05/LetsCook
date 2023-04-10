@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resep/splashscreen.dart';
 import './login_page.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(MaterialApp(
@@ -10,6 +11,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
+
+
   const MyApp({super.key});
 
   // This widget is the root of your application.
