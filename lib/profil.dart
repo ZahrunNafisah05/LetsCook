@@ -30,7 +30,7 @@ class AccountPage extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  'John Doe',
+                  'Icaa@gmail.com',
                   style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
